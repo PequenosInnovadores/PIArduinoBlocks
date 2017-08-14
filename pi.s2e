@@ -1,0 +1,81 @@
+{	
+	"extensionName": "Pequeños Innovadores",
+	"description": "Extensión de Pequeños Innovadores",
+	"version": "1.1",
+	"author": "jesus.carballo@portomaior.com",
+	"homepage": "https://www.pequeñosinnovadores.es",
+	"sort":0,
+	"javascriptURL":"js/pi.js",
+  	"firmware":"1.0",
+  	"extensionPort":0,
+	"tags" : "makeblock",
+	"blockSpecs": [
+		[
+			"w",
+			"Turn %d.digital the digital pin %n",
+			"runDigital",
+			"ON",
+			"13",
+			{
+				"encode":"{d0}{d1}",		
+				"setup":"pinMode({1},OUTPUT); \n",
+				"inc":"",
+				"def":"",
+				"work":"digitalWrite({1},{0});\n",
+				"loop":""
+			}
+		],
+		[
+			"w",
+			"Turn Servo of pin %n , %n degrees %d.sentido",
+			"runServoRightLeft",
+			"2",
+			"5",
+			"RIGHT",
+			{
+				"encode":"{d0}{d1}{d2}/*TODO: !!!*/",		
+				"setup":"pinMode({1},OUTPUT); \n",
+				"inc":"",
+				"def":"",
+				"work":"digitalWrite({1},{0});\n",
+				"loop":""
+			}
+		],
+		[
+			"w",
+			"Turn Servo of pin %n to %d.servovalue degrees",
+			"runServo",
+			"2",
+			"90",
+			{
+				"encode":"{d0}{d1}{d2}/*TODO: !!!*/",		
+				"setup":"pinMode({1},OUTPUT); \n",
+				"inc":"",
+				"def":"",
+				"work":"digitalWrite({1},{0});\n",
+				"loop":""
+			}
+		],
+	],
+	"menus": {
+		"digital":["ON","OFF"],
+		"sentido":["RIGHT","LEFT"],
+		"servovalue":["0","45","90","135","180"],
+	},
+	"values":{
+		"ON":1,
+		"OFF":0
+	},
+	"translators":{
+		"es_ES":{
+			"Turn %d.digital the digital pin %n": "%d.digital el pin digital %n",
+			"Turn Servo of pin %n , %n degrees %d.sentido": "Gira el Servo del pin %n , %n grados a la %d.sentido",
+			"Turn Servo of pin %n to %d.servovalue degrees": "Gira el Servo del pin %n a %d.servovalue grados",
+			"ON":"Encender",
+			"OFF":"Apagar",
+			"RIGHT": "Derecha",
+			"LEFT": "Izquierda",
+      		"blink":"Parpadear"
+		}
+	}
+}
